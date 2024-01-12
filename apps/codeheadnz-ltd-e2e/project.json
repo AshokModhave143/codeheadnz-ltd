@@ -1,0 +1,26 @@
+{
+  "name": "codeheadnz-ltd-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/codeheadnz-ltd-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/codeheadnz-ltd-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "codeheadnz-ltd:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "codeheadnz-ltd:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["codeheadnz-ltd"]
+}

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useServerInsertedHTML } from 'next/navigation';
+
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 
 export function StyledComponentsRegistry({
@@ -18,6 +19,7 @@ export function StyledComponentsRegistry({
 
     // Types are out of date, clearTag is not defined.
     // See: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/65021
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (styledComponentsStyleSheet.instance as any).clearTag();
 
     return <>{styles}</>;

@@ -1,5 +1,6 @@
 'use client';
 
+import {} from 'react';
 import { store } from '@redux/store';
 import { AppConfigState } from '@common/redux/appConfigSlice';
 import {
@@ -12,6 +13,7 @@ import { PropsWithChildren } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
+import ErrorBoundary from '@app/error';
 
 export interface AppRootProps extends PropsWithChildren {
   env: AppConfigState['environmentVariables'];
@@ -26,7 +28,9 @@ export default function AppRoot({ env, children }: AppRootProps) {
             <AppNextUiThemeProvider>
               <main className="h-[100vh] w-[100vw] text-foreground bg-background">
                 <Header />
-                <div className="flex flex-col">{children}</div>
+                <ErrorBoundary>
+                  <div className="flex flex-col">{children}</div>
+                </ErrorBoundary>
                 <Footer />
               </main>
             </AppNextUiThemeProvider>

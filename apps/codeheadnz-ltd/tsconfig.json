@@ -11,6 +11,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
@@ -18,7 +19,10 @@
     ],
     "types": ["jest", "node"],
     "paths": {
-      "@common/*": ["./app/_common/*"]
+      "@redux/*": ["./redux/*"],
+      "@common/*": ["./app/_common/*"],
+      "@app/*": ["./app/*"],
+      "@/*": ["./*"]
     }
   },
   "include": [

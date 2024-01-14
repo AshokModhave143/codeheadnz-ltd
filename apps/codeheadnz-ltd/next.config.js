@@ -7,6 +7,9 @@ const { composePlugins, withNx } = require('@nx/next');
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+  env: {
+    NX_CLOUD_AUTH_TOKEN: `${process.env.NX_CLOUD_AUTH_TOKEN}`,
+  },
   nx: {
     // Set this to true if you would like to to use SVGR
     // See: https://github.com/gregberge/svgr
@@ -15,7 +18,9 @@ const nextConfig = {
 
   compiler: {
     // For other options, see https://styled-components.com/docs/tooling#babel-plugin
-    styledComponents: true,
+    styledComponents: {
+      ssr: false,
+    },
   },
   images: {
     domains: ['images.pexels.com'],

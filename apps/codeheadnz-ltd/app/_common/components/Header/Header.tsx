@@ -28,17 +28,17 @@ export const Header = (props: HeaderProps) => {
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4 justify-center">
         <NavbarItem isActive>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/">
             Home
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/about">
             About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/contact">
             Contact
           </Link>
         </NavbarItem>

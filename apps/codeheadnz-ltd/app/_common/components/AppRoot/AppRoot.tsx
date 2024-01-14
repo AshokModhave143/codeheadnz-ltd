@@ -1,22 +1,38 @@
 'use client';
 
-import { AppNextUiProvider } from '../Providers';
-import { AppNextUiThemeProvider } from '../Providers/AppNextUiThemeProvider';
+import { store } from '@redux/store';
+import { AppConfigState } from '@common/redux/appConfigSlice';
+import {
+  AppConfigProvider,
+  AppNextUiProvider,
+  AppNextUiThemeProvider,
+} from '../Providers';
 import { StyledComponentsRegistry } from '../StyledComponentsRegistry';
 import { PropsWithChildren } from 'react';
+import { Provider as ReduxProvider } from 'react-redux';
+import { Header } from '../Header';
+import { Footer } from '../Footer';
 
-export interface AppRootProps extends PropsWithChildren {}
+export interface AppRootProps extends PropsWithChildren {
+  env: AppConfigState['environmentVariables'];
+}
 
-export const AppRoot = ({ children }: AppRootProps) => {
+export default function AppRoot({ env, children }: AppRootProps) {
   return (
-    <AppNextUiProvider>
-      <AppNextUiThemeProvider>
-        <StyledComponentsRegistry>
-          <main className="h-[100vh] w-[100vw] text-foreground bg-background">
-            {children}
-          </main>
-        </StyledComponentsRegistry>
-      </AppNextUiThemeProvider>
-    </AppNextUiProvider>
+    <StyledComponentsRegistry>
+      <ReduxProvider store={store}>
+        <AppConfigProvider env={env}>
+          <AppNextUiProvider>
+            <AppNextUiThemeProvider>
+              <main className="h-[100vh] w-[100vw] text-foreground bg-background">
+                <Header />
+                <div className="flex flex-col">{children}</div>
+                <Footer />
+              </main>
+            </AppNextUiThemeProvider>
+          </AppNextUiProvider>
+        </AppConfigProvider>
+      </ReduxProvider>
+    </StyledComponentsRegistry>
   );
-};
+}

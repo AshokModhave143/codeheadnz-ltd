@@ -4,9 +4,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nx run-many -t serve -p codeheadnz-ltd",
-    "build": "nx run-many -t build -p codeheadnz-ltd",
-    "storybook": "nx run-many -t storybook -p codeheadnz-ltd"
+    "start": "nx serve",
+    "build": "nx build",
+    "storybook": "nx run-many -t storybook -p codeheadnz-ltd",
+    "test": "nx test"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",

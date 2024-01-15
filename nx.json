@@ -62,5 +62,6 @@
         "linter": "eslint"
       }
     }
-  }
+  },
+  "defaultProject": "codeheadnz-ltd"
 }

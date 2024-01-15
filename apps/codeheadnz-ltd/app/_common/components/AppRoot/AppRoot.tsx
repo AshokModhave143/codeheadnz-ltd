@@ -4,7 +4,7 @@ import {} from 'react';
 import { store } from '@redux/store';
 import { AppConfigState } from '@common/redux/appConfigSlice';
 import {
-  AppConfigProvider,
+  // AppConfigProvider,
   AppNextUiProvider,
   AppNextUiThemeProvider,
 } from '../Providers';
@@ -23,19 +23,19 @@ export default function AppRoot({ env, children }: AppRootProps) {
   return (
     <StyledComponentsRegistry>
       <ReduxProvider store={store}>
-        <AppConfigProvider env={env}>
-          <AppNextUiProvider>
-            <AppNextUiThemeProvider>
-              <main className="h-[100vh] w-[100vw] text-foreground bg-background">
-                <Header />
-                <ErrorBoundary>
-                  <div className="flex flex-col">{children}</div>
-                </ErrorBoundary>
-                <Footer />
-              </main>
-            </AppNextUiThemeProvider>
-          </AppNextUiProvider>
-        </AppConfigProvider>
+        {/* <AppConfigProvider env={env}> */}
+        <AppNextUiProvider>
+          <AppNextUiThemeProvider>
+            <main className="h-[100vh] w-[100vw] text-foreground bg-background">
+              <Header />
+              <ErrorBoundary>
+                <div className="flex flex-col">{children}</div>
+              </ErrorBoundary>
+              <Footer />
+            </main>
+          </AppNextUiThemeProvider>
+        </AppNextUiProvider>
+        {/* </AppConfigProvider> */}
       </ReduxProvider>
     </StyledComponentsRegistry>
   );

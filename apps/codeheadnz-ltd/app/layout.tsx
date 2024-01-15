@@ -22,8 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body>
-        {/* <AppRoot env={env}>{children}</AppRoot> */}
-        <div>This is sample page for testing {env.ENVIORNMENT}</div>
+        <AppRoot env={env}>{children}</AppRoot>
       </body>
     </html>
   );

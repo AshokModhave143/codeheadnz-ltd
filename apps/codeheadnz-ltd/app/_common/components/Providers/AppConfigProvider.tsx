@@ -27,7 +27,7 @@ export const AppConfigProvider = ({
   }, []);
 
   if (Object.keys(environmentVariables).length === 0) {
-    return null;
+    console.log('No environment variables found');
   }
 
   return <>{children}</>;

@@ -1,19 +1,22 @@
 'use client';
 
+import { Link } from '@nextui-org/react';
+
 /* eslint-disable-next-line */
 export interface FooterProps {}
 
 export const Footer = (props: FooterProps) => {
   return (
-    <div className="flex-none h-20 mx-4 my-4">
-      <div className="flex flex-row justify-between items-center h-full">
-        <div>
-          <p className="text-small font-light">Codehead NZ Ltd @2024</p>
-        </div>
-        <div>
-          <p className="text-small font-light">Privacy</p>
-        </div>
+    <footer className="w-full flex item-center justify-center py-3 gap-4">
+      <Link isExternal className="flex items-center gap-1 text-current">
+        <span className="text-default-600">Powered by</span>
+        <p className="text-primary">Codehead NZ Ltd @2024</p>
+      </Link>
+      <div className="flex flex-row gap-1">
+        <p className="text-default-600">Privacy statement</p>
+        <div className="divider size-1 bg-white" />
+        <p className="text-default-600">Terms and conditions</p>
       </div>
-    </div>
+    </footer>
   );
 };

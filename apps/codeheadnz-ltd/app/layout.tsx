@@ -6,6 +6,11 @@ import { AppConfigState } from './_common/redux/appConfigSlice';
 export const metadata = {
   title: 'Codehead NZ LTD',
   description: 'Codehead NZ LTD company profile',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -20,8 +25,9 @@ export default function RootLayout({
   } as AppConfigState['environmentVariables'];
 
   return (
-    <html lang="en" className="dark">
-      <body>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head />
+      <body className="min-h-screen bg-background font-sans antialiased">
         <AppRoot env={env}>{children}</AppRoot>
       </body>
     </html>

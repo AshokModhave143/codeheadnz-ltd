@@ -8,6 +8,7 @@ import {
   NavbarContent,
   NavbarItem,
 } from '@nextui-org/react';
+import NextLink from 'next/link';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 
 /* eslint-disable-next-line */
@@ -18,15 +19,23 @@ export const Header = (props: HeaderProps) => {
     <Navbar
       shouldHideOnScroll
       maxWidth="full"
-      className="flex-none h-20 mx-4 my-4"
+      position="sticky"
+      className="h-32 px-4 py-4 sm:px-2 sm:py-2 sm:h-24"
     >
-      <NavbarBrand>
-        <div className="bg-cover bg-center bg-[url('/assets/images/codeheadnz-logo.png')] h-16 w-16" />
-        <p className="font-bold text-2xl text-inherit text-foreground ml-2">
-          Codehead NZ Limited
-        </p>
-      </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4 justify-center">
+      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+        <NavbarBrand as="li" className="gap-3 max-w-fit">
+          <NextLink
+            className="flex justify-start items-center gap-1"
+            href={'/'}
+          >
+            <div className="bg-cover bg-center bg-[url('/static/images/codeheadnz-logo.png')] h-16 w-16" />
+            <p className="font-bold text-2xl text-inherit">
+              Codehead NZ Limited
+            </p>
+          </NextLink>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive>
           <Link color="foreground" href="/">
             Home

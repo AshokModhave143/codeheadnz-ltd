@@ -13,7 +13,6 @@ import { PropsWithChildren } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import ErrorBoundary from '@app/error';
 
 export interface AppRootProps extends PropsWithChildren {
   env: AppConfigState['environmentVariables'];
@@ -26,13 +25,13 @@ export default function AppRoot({ env, children }: AppRootProps) {
         <AppConfigProvider env={env}>
           <AppNextUiProvider>
             <AppNextUiThemeProvider>
-              <main className="h-[100vh] w-[100vw] text-foreground bg-background">
+              <div className="relative flex flex-col h-screen">
                 <Header />
-                <ErrorBoundary>
-                  <div className="flex flex-col">{children}</div>
-                </ErrorBoundary>
+                <main className="container mx-auto max-w-7xl flex flex-col flex-grow">
+                  {children}
+                </main>
                 <Footer />
-              </main>
+              </div>
             </AppNextUiThemeProvider>
           </AppNextUiProvider>
         </AppConfigProvider>

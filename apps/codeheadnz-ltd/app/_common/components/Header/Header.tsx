@@ -18,6 +18,78 @@ import { ThemeSwitcher } from '../ThemeSwitcher';
 export interface HeaderProps {}
 
 export const Header = (props: HeaderProps) => {
+  const navConfig = {
+    companyName: 'Codehead NZ Limited',
+    logoUrl: '/static/images/codeheadnz-logo.png',
+    baseUrl: '/',
+    navLinks: [
+      {
+        label: 'Home',
+        href: '/',
+      },
+      {
+        label: 'About',
+        href: '/about',
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+      },
+    ],
+    socialLinks: [
+      {
+        label: 'Twitter',
+        href: 'https://twitter.com/codeheadnz',
+        icon: 'twitter',
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/ashokmodhave143',
+        icon: 'github',
+      },
+      {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/company/codeheadnz/',
+        icon: 'linkedin',
+      },
+    ],
+    signIn: {
+      label: 'Login',
+    },
+    signUp: {
+      label: 'Sign Up',
+    },
+    signOut: {
+      label: 'Sign Out',
+    },
+  };
+
+  const NavLinks = () => {
+    return navConfig.navLinks.map((link) => (
+      <NavbarItem key={link.label} isActive>
+        <Link color="foreground" href={link.href}>
+          {link.label}
+        </Link>
+      </NavbarItem>
+    ));
+  };
+
+  const ActionLinks = () => {
+    return (
+      <>
+        <NavbarItem>
+          <Link href="#">{navConfig.signIn.label}</Link>
+        </NavbarItem>
+        <Divider />
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            {navConfig.signUp.label}
+          </Button>
+        </NavbarItem>
+      </>
+    );
+  };
+
   return (
     <Navbar
       shouldHideOnScroll
@@ -29,82 +101,45 @@ export const Header = (props: HeaderProps) => {
         <NavbarBrand as="li" className="gap-2 max-w-fit">
           <NextLink
             className="flex justify-start items-center gap-1"
-            href={'/'}
+            href={navConfig.baseUrl}
           >
             <div
               className="bg-cover bg-center bg-no-repeat h-12 w-12 sm:h-16 sm:w-16"
               style={{
-                backgroundImage: `url('/static/images/codeheadnz-logo.png')`,
+                backgroundImage: `url(${navConfig.logoUrl})`,
               }}
             />
             <p className="font-bold text-xl sm:text-2xl text-inherit">
-              Codehead NZ Limited
+              {navConfig.companyName}
             </p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-3" justify="center">
-        <NavbarItem isActive>
-          <Link color="foreground" href="/">
-            Home
-          </Link>
-        </NavbarItem>
+        <NavLinks />
         <NavbarItem>
-          <Link color="foreground" href="/about">
-            About
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="/contact">
-            Contact
-          </Link>
+          <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>
+
       <NavbarContent className="sm:hidden" justify="end">
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarMenuToggle />
+
         <NavbarMenu className="mt-6 sm:mt-16">
-          <NavbarItem>
-            <Link href="#">Login</Link>
-          </NavbarItem>
+          <ActionLinks />
           <Divider />
-          <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
-              Sign up
-            </Button>
-          </NavbarItem>
-          <Divider />
-          <NavbarItem isActive>
-            <Link color="foreground" href="/">
-              Home
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="/about">
-              About
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="/contact">
-              Contact
-            </Link>
-          </NavbarItem>
+          <NavLinks />
         </NavbarMenu>
       </NavbarContent>
+
       <NavbarContent className="hidden" justify="end">
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
-        <NavbarItem>
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign up
-          </Button>
-        </NavbarItem>
+        <ActionLinks />
       </NavbarContent>
     </Navbar>
   );

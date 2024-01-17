@@ -13,6 +13,7 @@ import {
 } from '@nextui-org/react';
 import NextLink from 'next/link';
 import { ThemeSwitcher } from '../ThemeSwitcher';
+import './Header.style.css';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}

@@ -13,9 +13,8 @@ export const Footer = (props: FooterProps) => {
         <p className="text-primary">Codehead NZ Ltd @2024</p>
       </Link>
       <div className="flex flex-row gap-1">
-        <p className="text-default-600">Privacy statement</p>
-        <div className="divider size-1 bg-white" />
-        <p className="text-default-600">Terms and conditions</p>
+        <span className="text-default-600">Privacy statement</span>
+        <span className="text-default-600">Terms and conditions</span>
       </div>
     </footer>
   );

@@ -145,9 +145,6 @@ export const Header = (props: HeaderProps) => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden overflow-hidden" justify="end">
-        <NavbarItem className="overflow-hidden">
-          <ThemeSwitcher />
-        </NavbarItem>
         <NavbarMenuToggle />
 
         <NavbarMenu className="mt-4 sm:mt-8">
@@ -156,6 +153,8 @@ export const Header = (props: HeaderProps) => {
           </NavbarMenuItem>
           <Divider />
           <NavLinks />
+          <Divider />
+          <ThemeSwitcher />
         </NavbarMenu>
       </NavbarContent>
 

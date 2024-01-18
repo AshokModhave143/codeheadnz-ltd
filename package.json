@@ -8,8 +8,7 @@
     "build": "nx build",
     "storybook": "nx run-many -t storybook -p codeheadnz-ltd",
     "test": "nx test",
-    "git:acp": "git add . && git commit -m",
-    "postGit": "git push"
+    "git:acp": "node ./tools/scripts/gitAddCommitPush.ts"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",

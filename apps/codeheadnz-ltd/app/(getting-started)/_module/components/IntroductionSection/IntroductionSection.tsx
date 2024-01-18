@@ -9,7 +9,7 @@ export const IntroductionSection = () => {
       }}
     >
       <div className="flex justify-center items-center">
-        <div className="w-full md:w-1/2 sm:w-3/4 text-center rounded-sm backdrop-blur-sm bg-white/20 px-4 py-4">
+        <div className="w-full lg:w-1/3 md:w-1/2 sm:w-3/4 text-center rounded-sm backdrop-blur-sm bg-white/20 px-4 py-4">
           <h1 className="text-5xl text-white">Codehead NZ Limited</h1>
           <p className="text-2xl border-small w-fit mx-auto px-2 my-4 bg-gradient-to-r from-violet-500 to-red-500 bg-clip-text text-transparent uppercase">
             Bring ideas to real

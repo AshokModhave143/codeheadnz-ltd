@@ -129,8 +129,8 @@ export const Header = (props: HeaderProps) => {
         <ActionLinks />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden" justify="end">
-        <NavbarItem>
+      <NavbarContent className="sm:hidden overflow-hidden" justify="end">
+        <NavbarItem className="overflow-hidden">
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarMenuToggle />

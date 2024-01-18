@@ -1,14 +1,14 @@
 export const IntroductionSection = () => {
   return (
     <div
-      className="relative overflow-hidden rounded-lg bg-cover bg-no-repeat h-5/6"
+      className="relative overflow-hidden rounded-lg bg-cover bg-no-repeat h-full"
       style={{
         backgroundImage: `url(
           'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1'
         )`,
       }}
     >
-      <div className="flex justify-center items-center h-5/6">
+      <div className="flex justify-center items-center h-full">
         <div className="w-full lg:w-1/3 md:w-1/2 sm:w-3/4 text-center rounded-sm backdrop-blur-sm bg-white/20 px-4 py-4">
           <h1 className="text-5xl text-white">Codehead NZ Limited</h1>
           <p className="text-2xl border-small w-fit mx-auto px-2 my-4 bg-gradient-to-r from-violet-500 to-red-500 bg-clip-text text-transparent uppercase">

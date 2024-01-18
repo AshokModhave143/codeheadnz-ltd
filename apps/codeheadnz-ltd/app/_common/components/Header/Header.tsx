@@ -15,6 +15,7 @@ import {
 import NextLink from 'next/link';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import './Header.style.css';
+import { useState } from 'react';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -32,6 +33,14 @@ export const Header = (props: HeaderProps) => {
       {
         label: 'About',
         href: '/about',
+      },
+      {
+        label: 'Profile',
+        href: '/profile',
+      },
+      {
+        label: 'Projects',
+        href: '/projects',
       },
       {
         label: 'Contact',
@@ -66,9 +75,15 @@ export const Header = (props: HeaderProps) => {
     },
   };
 
+  const [activeTab, setActiveTab] = useState(navConfig.navLinks[0].label);
+
   const NavLinks = () => {
     return navConfig.navLinks.map((link) => (
-      <NavbarItem key={link.label} isActive>
+      <NavbarItem
+        key={link.label}
+        isActive={activeTab === link.label}
+        onClick={() => setActiveTab(link.label)}
+      >
         <Link color="foreground" href={link.href}>
           {link.label}
         </Link>
@@ -135,7 +150,7 @@ export const Header = (props: HeaderProps) => {
         </NavbarItem>
         <NavbarMenuToggle />
 
-        <NavbarMenu className="mt-6 sm:mt-16">
+        <NavbarMenu className="mt-4 sm:mt-8">
           <NavbarMenuItem>
             <ActionLinks />
           </NavbarMenuItem>

@@ -9,6 +9,7 @@ import {
   NavbarContent,
   NavbarItem,
   NavbarMenu,
+  NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
 import NextLink from 'next/link';
@@ -81,7 +82,7 @@ export const Header = (props: HeaderProps) => {
         <NavbarItem>
           <Link href="#">{navConfig.signIn.label}</Link>
         </NavbarItem>
-        <Divider />
+        <Divider className="hidden" />
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
             {navConfig.signUp.label}
@@ -116,11 +117,16 @@ export const Header = (props: HeaderProps) => {
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-3" justify="center">
+
+      <NavbarContent className="hidden sm:flex" justify="center">
         <NavLinks />
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex" justify="end">
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
+        <ActionLinks />
       </NavbarContent>
 
       <NavbarContent className="sm:hidden" justify="end">
@@ -130,7 +136,9 @@ export const Header = (props: HeaderProps) => {
         <NavbarMenuToggle />
 
         <NavbarMenu className="mt-6 sm:mt-16">
-          <ActionLinks />
+          <NavbarMenuItem>
+            <ActionLinks />
+          </NavbarMenuItem>
           <Divider />
           <NavLinks />
         </NavbarMenu>

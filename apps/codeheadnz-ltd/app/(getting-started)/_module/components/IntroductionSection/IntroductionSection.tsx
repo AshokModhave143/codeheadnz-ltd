@@ -1,7 +1,7 @@
 export const IntroductionSection = () => {
   return (
     <div
-      className="relative overflow-hidden rounded-lg bg-cover bg-no-repeat p-12 text-center h-full"
+      className="relative overflow-hidden rounded-lg bg-cover bg-no-repeat py-12 text-center h-full"
       style={{
         backgroundImage: `url(
           'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1'
@@ -9,9 +9,9 @@ export const IntroductionSection = () => {
       }}
     >
       <div className="flex justify-center items-center">
-        <div className="w-full sm:w-1/2 text-center rounded-sm backdrop-blur-sm bg-white/20 px-4 py-4">
+        <div className="w-full md:w-1/2 sm:w-3/4 text-center rounded-sm backdrop-blur-sm bg-white/20 px-4 py-4">
           <h1 className="text-5xl text-white">Codehead NZ Limited</h1>
-          <p className="text-2xl bg-gradient-to-r from-violet-500 to-red-500 bg-clip-text text-transparent">
+          <p className="text-2xl border-small w-fit mx-auto px-2 my-4 bg-gradient-to-r from-violet-500 to-red-500 bg-clip-text text-transparent uppercase">
             Bring ideas to real
           </p>
           <p className="text-lg bg-background text-center light:text-foreground/40 font-light mt-8 px-4 py-2 rounded-lg">

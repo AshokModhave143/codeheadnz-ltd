@@ -4,7 +4,7 @@ import { Progress } from '@nextui-org/react';
 export const AboutSection = () => {
   return (
     <PageSection>
-      <div className="h-full flex flex-col justify-center items-center">
+      <div className="size-full flex flex-col items-center justify-center">
         <h1 className="text-3xl">About this</h1>
         <Progress
           isStriped

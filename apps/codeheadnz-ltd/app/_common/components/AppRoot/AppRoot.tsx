@@ -27,9 +27,7 @@ export default function AppRoot({ env, children }: AppRootProps) {
             <AppNextUiThemeProvider>
               <div className="relative flex flex-col h-screen w-screen">
                 <Header />
-                <main className="container flex flex-col flex-grow">
-                  {children}
-                </main>
+                <main className="container-none mx-auto">{children}</main>
                 <Footer />
               </div>
             </AppNextUiThemeProvider>

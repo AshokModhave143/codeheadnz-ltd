@@ -1,3 +1,3 @@
 export const PageSection = ({ children }: { children: React.ReactNode }) => {
-  return <section className="h-5/6">{children}</section>;
+  return <section className="h-80 w-screen">{children}</section>;
 };

@@ -1,11 +1,11 @@
-import { PageSection } from '@common/components/PageSection';
+import { Introduction } from './_module/components/Introduction';
+import { TechStack } from './_module/components/TechStack';
 
 export default function ProfilePafe() {
   return (
-    <PageSection>
-      <div className="bg-red-500 h-full w-full">
-        <h1>Profile Page 1234</h1>
-      </div>
-    </PageSection>
+    <div className="h-screen bg-background">
+      <Introduction />
+      <TechStack />
+    </div>
   );
 }

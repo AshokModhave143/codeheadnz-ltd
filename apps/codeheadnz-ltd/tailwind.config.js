@@ -20,6 +20,9 @@ module.exports = {
   },
   darkMode: 'class',
   plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
     nextui({
       themes: {
         dark: {

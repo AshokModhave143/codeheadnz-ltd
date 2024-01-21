@@ -4,7 +4,7 @@ export const IntroductionSection = () => {
       className="relative overflow-hidden rounded-lg bg-cover bg-no-repeat bg-center size-full sm:size-full md:size-full"
       style={{
         backgroundImage: `url(
-          'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=1'
+          '/static/images/intro-page-bg-image.jpg'
         )`,
       }}
     >

@@ -3,7 +3,7 @@ import { TechStack } from './_module/components/TechStack';
 
 export default function ProfilePafe() {
   return (
-    <div className="h-screen bg-background overflow-y-scroll">
+    <div className="h-screen w-screen bg-background overflow-hidden">
       <Introduction />
       <TechStack />
     </div>

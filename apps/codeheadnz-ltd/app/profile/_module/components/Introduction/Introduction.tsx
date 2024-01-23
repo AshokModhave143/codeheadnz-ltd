@@ -23,12 +23,12 @@ export const Introduction = () => {
             <Avatar
               src="/static/images/profile.jpg"
               alt="Ashok Modhave profile image"
-              className="h-48 w-48 text-large sm:h-64 sm:w-64 text-center"
+              className="h-48 w-48 text-large sm:h-64 sm:w-64 text-center overflow-hidden"
             />
           </div>
         </div>
         <div className="w-full text-center px-2">
-          <p className="text-3xl sm:text-4xl italic font-bold rounded-full px-4 py-2 bg-gray-700 bg-transparent text-yellow-500">
+          <p className="text-3xl sm:text-4xl italic font-bold rounded-full px-4 py-2 bg-gray-700 text-yellow-500">
             I want to <u>make things</u> that make difference.
           </p>
         </div>

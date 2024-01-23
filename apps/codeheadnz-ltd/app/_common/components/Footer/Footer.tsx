@@ -7,7 +7,7 @@ export interface FooterProps {}
 
 export const Footer = (props: FooterProps) => {
   return (
-    <footer className="w-full flex item-center justify-center py-3 gap-4">
+    <footer className="w-full flex item-center justify-center py-3 gap-4 bottom-0">
       <Link isExternal className="flex items-center gap-1 text-current">
         <span className="text-default-600">Powered by</span>
         <p className="text-primary">Codehead NZ Ltd @2024</p>

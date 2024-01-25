@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { SideDrawer } from './_module/components/side-drawer';
 
 export default function ProfilePageLayout({
   children,
@@ -7,15 +6,16 @@ export default function ProfilePageLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="h-screen w-screen bg-background overflow-hidden">
-      <div className="grid grid-cols-12 gap-2 size-full overflow-hidden">
-        <div className="col-span-1 sticky size-full overflow-x-hidden overflow-y-auto">
-          <SideDrawer />
-        </div>
-        <div className="col-span-11 w-auto  overflow-x-hidden overflow-y-auto">
-          {children}
-        </div>
-      </div>
+    // <div className="h-screen w-screen bg-background overflow-hidden">
+    //   <div className="grid grid-cols-12 gap-2 size-full overflow-hidden">
+    //     <div className="col-span-2 sticky size-full overflow-x-hidden overflow-y-auto">
+    //       <SideDrawer />
+    //     </div>
+    //     <div className="col-span-10 w-auto overflow-y-auto">{children}</div>
+    //   </div>
+    // </div>
+    <div className="h-screen w-screen bg-background overflow-auto">
+      {children}
     </div>
   );
 }

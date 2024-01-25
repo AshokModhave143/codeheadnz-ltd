@@ -10,7 +10,9 @@ export const Introduction = () => {
               I want to{' '}
               <span className="bg-secondary">&nbsp;make things&nbsp;</span>
             </p>
-            <p>that make difference.</p>
+            <p>
+              that <span className="underline">make a difference</span>.
+            </p>
           </div>
           <div className="flex flex-wrap-reverse sm:flex-nowrap w-full md:w-1/2 justify-right">
             <div className="container-md mx-auto max-w-5xl w-full h-full my-4">

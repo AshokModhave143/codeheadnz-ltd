@@ -1,4 +1,5 @@
-import { Avatar } from '@nextui-org/react';
+import { Avatar, Button, LinkIcon } from '@nextui-org/react';
+import { FaAngleDown } from 'react-icons/fa';
 
 export const Introduction = () => {
   return (
@@ -39,6 +40,17 @@ export const Introduction = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div>
+            <Button
+              as="a"
+              variant="flat"
+              color="primary"
+              href="#tech-stack"
+              className="rounded-full w-fit p-0 bg-primary hover:bg-primary/80"
+            >
+              <FaAngleDown color="white" className="h-6 w-6" />
+            </Button>
           </div>
         </div>
       </div>

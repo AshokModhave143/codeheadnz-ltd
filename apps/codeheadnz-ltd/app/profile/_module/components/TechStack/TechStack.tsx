@@ -78,7 +78,7 @@ export const TechStack = () => {
     },
   ];
   return (
-    <PageSection>
+    <PageSection id="tech-stack">
       <div className="container mx-auto size-full flex flex-col items-center gap-4 px-4 py-8 sm:px-2 sm:py-12">
         <p className="text-3xl font-bold">Tech Stack</p>
         <p>{`Technologies I've been working with recently`}</p>

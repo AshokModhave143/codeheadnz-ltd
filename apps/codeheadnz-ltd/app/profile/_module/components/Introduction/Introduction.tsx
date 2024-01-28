@@ -1,4 +1,4 @@
-import { Avatar, Button, LinkIcon } from '@nextui-org/react';
+import { Avatar, Button } from '@nextui-org/react';
 import { FaAngleDown } from 'react-icons/fa';
 
 export const Introduction = () => {

@@ -1,6 +1,34 @@
 import { PageSection } from '@common/components/PageSection';
 
 export const About = () => {
+  const glimpse = [
+    {
+      title: 'Front-End Mastery',
+      description:
+        'HTML5, React, React Native, Next.js, Redux, Redux Toolkit, React-Hook-Form',
+    },
+    {
+      title: 'Back-End Powerhouse',
+      description: 'Node.js, Typescript, Express.js, Spring MVC, Java',
+    },
+    {
+      title: 'Cloud Savvy',
+      description: 'AWS Lambda, DynamoDB, Serverless, S3, SES, SNS',
+    },
+    {
+      title: 'AI/ML Explorer',
+      description: 'Dialogflow (Api.ai)',
+    },
+    {
+      title: 'Database',
+      description: 'RDBMS (Oracle, MySQL, MS SQL) & NoSQL (MongoDB, DynamoDB)',
+    },
+    {
+      title: 'Testing Champion',
+      description: 'Selenium WebDriver, Mocha, Chai, Node.js, TestNG, Cucumber',
+    },
+  ];
+
   return (
     <PageSection
       id="about"
@@ -10,69 +38,49 @@ export const About = () => {
         <p className="text-4xl font-bold my-8 sm:my-10">About</p>
       </div>
       <div
-        className="container mx-auto rounded-lg bg-primary text-base p-4 m-4 border-x-large text-justify border-y-1 border-content1-foreground"
+        className="container mx-auto rounded-lg bg-primary p-4 m-4 border-s-8 text-justify border-e-1 border-y-1 bg-gradient-to-t from-secondary-100 to-secondary-1000 border-primary-800"
         role="alert"
       >
-        <p className="object-none object-left-top">
-          Mission-driven full stack developer with a passion for bringing
-          digital visions to life, crafting modern, innovative and reliable web
-          and mobile applications.
-        </p>
+        <div className="text-2xl font-medium">
+          Crafting the Future, Pixel by Pixel: A passionate Full-Stack Developer
+          at your service. Bringing digital visions to life, building modern,
+          innovative and reliable web and mobile applications.
+        </div>
       </div>
-      <div className="container mx-auto">
-        <ul>
-          <li>
-            • Working as Software Developer with 9+ years of overall technology
-            experience including 5+ years in Full Stack Development
-          </li>
-          <li>
-            • Strong experience of developing web and mobile applications using
-            JavaScript frameworks namely HTML5, ReactJs, React-native, Redux,
-            ReduxToolkit, React-hook-form, NodeJs, typescript,
-            ExpressJs,AngularJS/1.x/2.x/5, react-testing-library
-          </li>
-          <li>
-            • Knowledge of developing applications using AWS services namely
-            Lambda, DynamoDB, Serverless, S3, Simple Email Service(SES), Simple
-            Notification Service(SNS)
-          </li>
-          <li>
-            • Programming skills in multiple languages like Javascript,
-            Typescript, Java, Spring MVC, NodeJs, C++
-          </li>
-          <li>
-            • Exploring new technologies in Artificial Intelligence(AI)/Machine
-            Learning(ML), Dialogflow(Api.ai)
-          </li>
-          <li>
-            • Good exposure to Frameworks like Spring MVC, MVVM and developing
-            RESTful web services using ExpressJs, NodeJs
-          </li>
-          <li>• Good knowledge of Docker, Kubernet</li>
-          <li>
-            • Technical and functional knowledge of Banking and Finance domain
-          </li>
-          <li>
-            • Experience of front and back end development of customer facing
-            web and mobile applications
-          </li>
-          <li>
-            • Involved requirement analysis, design, development and unit
-            testing of console as well as web-based applications of finance
-          </li>
-          <li>
-            • Technical knowledge of RDBMS databases like Oracle 10g, MySQL, MS
-            SQL as well as NoSQL databases like MongoDB, DynamoDB etc
-          </li>
-          <li>
-            • Good experience on developing test automation javascript framework
-            using selenium webdriver, mocha, chai, NodeJs, testNG, Cucumber
-          </li>
-          <li>
-            • Completed Bachelors in Information Technology and Engineering from
-            University of Pune
-          </li>
-        </ul>
+      <div className="container mx-auto text-xl font-normal">
+        <p className="indent-8 my-4">
+          With a deep-seated passion for breathing life into digital visions, I
+          bring 11+ years of technology experience with refined Full-Stack
+          experties, to every project. I wear multiple hats - seamlessly
+          navigating the front-end with React, React Native, and Redux while
+          building robust back-ends with Node.js, Expreess, and various AWS
+          services.
+        </p>
+        <p>Here&apos;s a glimpse of my arsenal:</p>
+        <p>
+          <ul className="list-disc list-inside">
+            {glimpse.map((item) => (
+              <li key={item.title}>
+                <strong>{item.title}:</strong> {item.description}
+              </li>
+            ))}
+          </ul>
+        </p>
+        <p className="my-4">
+          And beyond the code, I bring strong communication, collaboration, and
+          problem-solving skills to the table. Whether it&apos;s building
+          customer-facing applications, automating tests, or venturing into AI,
+          I&apos;m driven by continuous learning and delivering exceptional
+          results. As a web developer, I enjoy using my obsessive attention to
+          detail, my unequivocal love for making things, and my mission-driven
+          work ethic to literally change the world. That&apos;s why I&apos;m
+          excited to make a big impact at a high growth company.
+        </p>
+        <p className="my-4">
+          <strong>Let&apos;s collaborate!</strong> I&apos;m eager to hear about
+          your next digital challenge and how I can help you transform it into a
+          reality.
+        </p>
       </div>
     </PageSection>
   );

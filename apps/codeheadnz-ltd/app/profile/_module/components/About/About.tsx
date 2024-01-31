@@ -32,7 +32,7 @@ export const About = () => {
   return (
     <PageSection
       id="about"
-      className="h-fit w-full bg-gradient-to-r from-primary-50 to-secondary-50 pb-8"
+      className="h-fit w-full bg-gradient-to-r from-primary-50 to-secondary-50 pb-8 px-4"
     >
       <div className="flex flex-col justify-center items-center ">
         <p className="text-4xl font-bold my-8 sm:my-10">About</p>
@@ -57,15 +57,13 @@ export const About = () => {
           services.
         </p>
         <p>Here&apos;s a glimpse of my arsenal:</p>
-        <p>
-          <ul className="list-disc list-inside">
-            {glimpse.map((item) => (
-              <li key={item.title}>
-                <strong>{item.title}:</strong> {item.description}
-              </li>
-            ))}
-          </ul>
-        </p>
+        <ul className="list-disc list-inside">
+          {glimpse.map((item) => (
+            <li key={item.title}>
+              <strong>{item.title}:</strong> {item.description}
+            </li>
+          ))}
+        </ul>
         <p className="my-4">
           And beyond the code, I bring strong communication, collaboration, and
           problem-solving skills to the table. Whether it&apos;s building

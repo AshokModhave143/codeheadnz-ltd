@@ -80,7 +80,7 @@ export const TechStack = () => {
   return (
     <PageSection id="tech-stack">
       <div className="container mx-auto size-full flex flex-col items-center gap-4 px-4 py-8 sm:px-2 sm:py-12">
-        <p className="text-3xl font-bold">Tech Stack</p>
+        <p className="text-3xl font-bold underline">Tech Stack</p>
         <p>{`Technologies I've been working with recently`}</p>
         <div className="grid grid-cols-3 gap-4 sm:grid-cols-4:gap-6 md:grid-cols-6 md:gap-8">
           {techStackList.map(({ Component, label, className }) => (

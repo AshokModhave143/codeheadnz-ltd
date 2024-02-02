@@ -1,3 +1,4 @@
+import { AnchorJumpButton } from '@common/components/AnchorJumpButton';
 import { PageSection } from '@common/components/PageSection';
 
 export const About = () => {
@@ -35,7 +36,7 @@ export const About = () => {
       className="h-fit w-full bg-gradient-to-r from-primary-50 to-secondary-50 pb-8 px-4"
     >
       <div className="flex flex-col justify-center items-center ">
-        <p className="text-4xl font-bold my-8 sm:my-10">About</p>
+        <p className="text-4xl font-bold my-8 sm:my-10 underline">About</p>
       </div>
       <div
         className="container mx-auto rounded-lg bg-primary p-4 m-4 border-s-8 text-justify border-e-1 border-y-1 bg-gradient-to-t from-secondary-100 to-secondary-1000 border-primary-800"
@@ -80,6 +81,8 @@ export const About = () => {
           reality.
         </p>
       </div>
+
+      <AnchorJumpButton href="#tech-stack" />
     </PageSection>
   );
 };

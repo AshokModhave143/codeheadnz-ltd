@@ -1,5 +1,5 @@
-import { Avatar, Button } from '@nextui-org/react';
-import { FaAngleDown } from 'react-icons/fa';
+import { AnchorJumpButton } from '@common/components/AnchorJumpButton';
+import { Avatar } from '@nextui-org/react';
 
 export const Introduction = () => {
   return (
@@ -41,17 +41,8 @@ export const Introduction = () => {
               </div>
             </div>
           </div>
-          <div>
-            <Button
-              as="a"
-              variant="flat"
-              color="primary"
-              href="#tech-stack"
-              className="rounded-full w-fit p-0 bg-primary hover:bg-primary/80"
-            >
-              <FaAngleDown color="white" className="h-6 w-6" />
-            </Button>
-          </div>
+
+          <AnchorJumpButton href="#about" />
         </div>
       </div>
     </div>

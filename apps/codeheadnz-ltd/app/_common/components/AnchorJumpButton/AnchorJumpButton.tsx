@@ -9,8 +9,8 @@ export const AnchorJumpButton = (props: AnchorJumpButtonProps) => {
     <div className="w-full text-center py-8">
       <motion.div
         animate={{
-          scale: [1, 2, 2, 1, 1],
-          rotate: [0, 0, 180, 180, 0],
+          scale: [1, 1.1, 1.2, 1.1, 1],
+          rotate: [0, 180, 180, 180, 0],
           borderRadius: ['0%', '0%', '50%', '50%', '0%'],
         }}
         transition={{

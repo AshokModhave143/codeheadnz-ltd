@@ -1,3 +1,6 @@
+import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
+import { Button } from '@nextui-org/react';
+
 export const IntroductionSection = () => {
   return (
     <div
@@ -22,6 +25,16 @@ export const IntroductionSection = () => {
             the forefront of the latest technological advancements.
           </p>
         </div>
+        <Button
+          variant="shadow"
+          size="lg"
+          as="a"
+          href={`/profile/#${PROFILE_PAGE_SECTION_IDS.introduction}`}
+          color="primary"
+          className="mt-8"
+        >
+          Get started...
+        </Button>
       </div>
     </div>
   );

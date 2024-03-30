@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export interface AnchorJumpButtonProps extends ButtonProps {}
 export const AnchorJumpButton = (props: AnchorJumpButtonProps) => {
   return (
-    <div className="w-fit text-center py-8">
+    <div className="w-full text-center py-8">
       <motion.div
         animate={{
           scale: [1, 1.1, 1.2, 1.1, 1],

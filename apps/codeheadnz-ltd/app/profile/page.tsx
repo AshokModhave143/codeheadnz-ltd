@@ -2,6 +2,7 @@ import { TechStack } from './_module/components/TechStack';
 import { Introduction } from './_module/components/Introduction';
 import { About } from './_module/components/About';
 import { Projects } from './_module/components/Projects';
+import { Contact } from './_module/components/Contact';
 
 export default function ProfilePafe() {
   return (
@@ -10,6 +11,7 @@ export default function ProfilePafe() {
       <About />
       <TechStack />
       <Projects />
+      <Contact />
     </div>
   );
 }

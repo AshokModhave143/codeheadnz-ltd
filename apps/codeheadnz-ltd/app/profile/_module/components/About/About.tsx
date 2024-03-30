@@ -1,5 +1,6 @@
 import { AnchorJumpButton } from '@common/components/AnchorJumpButton';
 import { PageSection } from '@common/components/PageSection';
+import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
 
 export const About = () => {
   const glimpse = [
@@ -32,7 +33,7 @@ export const About = () => {
 
   return (
     <PageSection
-      id="about"
+      id={PROFILE_PAGE_SECTION_IDS.about}
       className="h-fit w-full bg-gradient-to-r from-primary-50 to-secondary-50 pb-8 px-4"
     >
       <div className="flex flex-col justify-center items-center ">
@@ -82,7 +83,7 @@ export const About = () => {
         </p>
       </div>
 
-      <AnchorJumpButton href="#tech-stack" />
+      <AnchorJumpButton href={`#${PROFILE_PAGE_SECTION_IDS.techStack}`} />
     </PageSection>
   );
 };

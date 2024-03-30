@@ -1,9 +1,13 @@
 import { AnchorJumpButton } from '@common/components/AnchorJumpButton';
+import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
 import { Avatar } from '@nextui-org/react';
 
 export const Introduction = () => {
   return (
-    <div className="h-screen justify-center items-center w-screen overflow-auto">
+    <div
+      className="h-screen justify-center items-center w-screen overflow-auto"
+      id={PROFILE_PAGE_SECTION_IDS.introduction}
+    >
       <div className="w-full h-screen bg-[url('/static/images/profile-intro-bg.jpg')] bg-cover bg-center">
         <div className="h-full flex flex-col justify-evenly items-center backdrop-brightness-50 text-white px-1">
           <div className="text-4xl font-bold text-center sm:text-6xl sm:text-left">
@@ -42,7 +46,7 @@ export const Introduction = () => {
             </div>
           </div>
 
-          <AnchorJumpButton href="#about" />
+          <AnchorJumpButton href={`#${PROFILE_PAGE_SECTION_IDS.about}`} />
         </div>
       </div>
     </div>

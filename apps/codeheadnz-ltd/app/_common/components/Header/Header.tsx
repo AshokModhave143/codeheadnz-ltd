@@ -16,6 +16,7 @@ import NextLink from 'next/link';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import './Header.style.css';
 import { useState } from 'react';
+import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -32,7 +33,7 @@ export const Header = (props: HeaderProps) => {
       },
       {
         label: 'About',
-        href: '/about',
+        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.about}`,
       },
       {
         label: 'Profile',
@@ -40,11 +41,11 @@ export const Header = (props: HeaderProps) => {
       },
       {
         label: 'Projects',
-        href: '/projects',
+        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.projects}`,
       },
       {
         label: 'Contact',
-        href: '/contact',
+        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.contact}`,
       },
     ],
     socialLinks: [

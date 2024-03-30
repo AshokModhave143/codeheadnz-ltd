@@ -1,4 +1,6 @@
+import { AnchorJumpButton } from '@common/components/AnchorJumpButton';
 import { PageSection } from '@common/components/PageSection';
+import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
 import {
   DiAndroid,
   DiAngularSimple,
@@ -78,7 +80,7 @@ export const TechStack = () => {
     },
   ];
   return (
-    <PageSection id="tech-stack">
+    <PageSection id={PROFILE_PAGE_SECTION_IDS.techStack}>
       <div className="container mx-auto size-full flex flex-col items-center gap-4 px-4 py-8 sm:px-2 sm:py-12">
         <p className="text-3xl font-bold underline">Tech Stack</p>
         <p>{`Technologies I've been working with recently`}</p>
@@ -93,6 +95,7 @@ export const TechStack = () => {
           ))}
         </div>
       </div>
+      <AnchorJumpButton href={`#${PROFILE_PAGE_SECTION_IDS.projects}`} />
     </PageSection>
   );
 };

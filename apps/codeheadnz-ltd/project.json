@@ -9,7 +9,10 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/codeheadnz-ltd"
+        "outputPath": "dist/apps/codeheadnz-ltd",
+        "assets": [
+          "apps/codeheadnz-ltd/ms94705071.txt"
+        ]
       },
       "configurations": {
         "development": {

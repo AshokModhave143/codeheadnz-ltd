@@ -4,7 +4,8 @@
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "outputs": ["{projectRoot}/dist"]
     },
     "lint": {
       "cache": true,
@@ -31,6 +32,13 @@
     "e2e": {
       "cache": true,
       "inputs": ["default", "^production"]
+    },
+    "build:codeheadnz": {
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "test": {
+      "cache": true
     }
   },
   "namedInputs": {
@@ -63,5 +71,33 @@
       }
     }
   },
-  "defaultProject": "codeheadnz-ltd"
+  "defaultProject": "codeheadnz-ltd",
+  "defaultBase": "main",
+  "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
+      }
+    },
+    {
+      "plugin": "@nx/cypress/plugin",
+      "options": {
+        "targetName": "cypress:e2e",
+        "openTargetName": "open-cypress",
+        "componentTestingTargetName": "component-test",
+        "ciTargetName": "e2e-ci"
+      }
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "next:build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "serve-static"
+      }
+    }
+  ],
+  "nxCloudAccessToken": "NzU5OTE4NGQtNTkxMi00NjNkLTk5ZTktYTUwMzFhM2Y0MzMxfHJlYWQtd3JpdGU="
 }

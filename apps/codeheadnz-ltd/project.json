@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/codeheadnz-ltd",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/next:build",
@@ -10,9 +11,7 @@
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/codeheadnz-ltd",
-        "assets": [
-          "apps/codeheadnz-ltd/ms94705071.txt"
-        ]
+        "assets": ["apps/codeheadnz-ltd/ms94705071.txt"]
       },
       "configurations": {
         "development": {
@@ -55,7 +54,10 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/codeheadnz-ltd/Dockerfile . -t codeheadnz-ltd"
     }
-  },
-  "tags": []
+  }
 }

@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "codeheadnz.com",
+  "Id": "fc7e373b-e9e2-49a3-8edd-86b776d56264"
+}

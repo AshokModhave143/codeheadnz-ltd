@@ -45,3 +45,7 @@ Thumbs.db
 
 .env*.local
 .vercel
+
+
+
+.nx/workspace-data

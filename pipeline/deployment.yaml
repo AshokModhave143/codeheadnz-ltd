@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codeheadnz-ltd-deployment
+  namespace: development
+  labels:
+    app: codeheadnz-ltd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: codeheadnz-ltd
+  template:
+    metadata:
+      labels:
+        app: codeheadnz-ltd
+    spec:
+      containers:
+      - name: codeheadnz-ltd
+        image: codeheadnz-ltd:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"

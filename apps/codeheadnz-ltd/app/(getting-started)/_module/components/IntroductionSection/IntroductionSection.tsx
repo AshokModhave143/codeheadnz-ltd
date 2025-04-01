@@ -17,9 +17,9 @@ export const IntroductionSection = () => {
           <p className="text-2xl border-small w-fit mx-auto px-2 my-4 bg-gradient-to-r from-violet-500 to-red-500 bg-clip-text text-transparent uppercase">
             Bring ideas to real
           </p>
-          <p className="text-lg bg-background text-center light:text-foreground/40 font-light mt-8 px-4 py-2 rounded-lg">
+          <p className="text-lg bg-black-100  text-center light:text-foreground/40 font-light mt-8 px-4 py-2 rounded-lg">
             we blend innovation with expertise to deliver cutting-edge software
-            development and programming services tailored to meetß your unique
+            development and programming services tailored to meet your unique
             business needs. As a leading technology solutions provider, we take
             pride in our commitment to excellence and our passion for staying at
             the forefront of the latest technological advancements.

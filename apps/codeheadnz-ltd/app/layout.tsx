@@ -1,4 +1,4 @@
-import './global.css';
+import './globals.css';
 import AppRoot from './_common/components/AppRoot';
 import { unstable_noStore as noStore } from 'next/cache';
 import { AppConfigState } from './_common/redux/appConfigSlice';

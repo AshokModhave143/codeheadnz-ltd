@@ -14,7 +14,6 @@ import {
 } from '@nextui-org/react';
 import NextLink from 'next/link';
 import { ThemeSwitcher } from '../ThemeSwitcher';
-import './Header.style.css';
 import { useState } from 'react';
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
 

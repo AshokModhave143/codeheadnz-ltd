@@ -7,7 +7,7 @@ import {
   Image,
   Link,
   Chip,
-} from '@nextui-org/react';
+} from "@heroui/react";
 
 export interface ProjectCardProps {
   title: string;

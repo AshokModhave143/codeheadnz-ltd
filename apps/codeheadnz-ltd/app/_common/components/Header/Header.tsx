@@ -1,9 +1,9 @@
 'use client';
 
 import {
+  Link,
   Button,
   Divider,
-  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -11,20 +11,20 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from '@nextui-org/react';
-import NextLink from 'next/link';
+} from '@heroui/react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import { useState } from 'react';
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
+import { CompanyLogo } from '../CompanyLogo';
+import { FaBars } from 'react-icons/fa';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
 
 export const Header = (props: HeaderProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navConfig = {
-    companyName: 'Codehead NZ Limited',
-    logoUrl: '/static/images/codeheadnz-logo.png',
-    baseUrl: '/',
     navLinks: [
       {
         label: 'Home',
@@ -77,7 +77,7 @@ export const Header = (props: HeaderProps) => {
 
   const [activeTab, setActiveTab] = useState(navConfig.navLinks[0].label);
 
-  const NavLinks = () => {
+  const NavMenuLinks = () => {
     return navConfig.navLinks.map((link) => (
       <NavbarItem
         key={link.label}
@@ -97,7 +97,6 @@ export const Header = (props: HeaderProps) => {
         <NavbarItem>
           <Link href="#">{navConfig.signIn.label}</Link>
         </NavbarItem>
-        <Divider className="hidden" />
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
             {navConfig.signUp.label}
@@ -112,58 +111,62 @@ export const Header = (props: HeaderProps) => {
       shouldHideOnScroll
       maxWidth="full"
       position="sticky"
-      className="h-24 py-2 px-2 sm:h-32 sm:px-4 sm:py-4"
+      isMenuOpen={isMenuOpen}
+      isBordered
+      onMenuOpenChange={setIsMenuOpen}
+      className="flex p-2 justify-between"
     >
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-2 max-w-fit">
-          <NextLink
-            className="flex justify-start items-center gap-1"
-            href={navConfig.baseUrl}
-          >
-            <div
-              className="bg-cover bg-center bg-no-repeat h-12 w-12 sm:h-16 sm:w-16"
-              style={{
-                backgroundImage: `url(${navConfig.logoUrl})`,
-              }}
-            />
-            <p className="font-bold text-xl sm:text-2xl text-inherit">
-              {navConfig.companyName}
-            </p>
-          </NextLink>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          className="sm:hidden"
+          content=""
+          icon={<FaBars className="size-8 bg-black-100" />}
+        />
+        <NavbarBrand className="gap-2">
+          <CompanyLogo />
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex" justify="center">
-        <NavLinks />
+      <NavbarContent justify="center">
+        <NavMenuLinks />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex" justify="end">
-        <NavbarItem>
+      <NavbarContent justify="end">
+        <NavbarItem className="lg:flex">
           <ThemeSwitcher />
         </NavbarItem>
         <ActionLinks />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden overflow-hidden" justify="end">
-        <NavbarMenuToggle />
-
-        <NavbarMenu className="mt-4 sm:mt-8">
-          <NavbarMenuItem>
-            <ActionLinks />
+      <NavbarMenu className="sm:hidden bg-black fixed py-2 px-4">
+        {navConfig.navLinks.map((item, index) => (
+          <NavbarMenuItem key={`${item.label}-${index}`}>
+            <Link
+              className="w-full"
+              color={
+                index === 2
+                  ? 'primary'
+                  : index === navConfig.navLinks.length - 1
+                  ? 'danger'
+                  : 'foreground'
+              }
+              href={item.href}
+              size="lg"
+            >
+              {item.label}
+            </Link>
           </NavbarMenuItem>
-          <Divider />
-          <NavLinks />
-          <Divider />
+        ))}
+        <Divider />
+        <NavbarMenuItem className="gap-2">
+          <ActionLinks />
+        </NavbarMenuItem>
+        <Divider />
+        <NavbarMenuItem>
           <ThemeSwitcher />
-        </NavbarMenu>
-      </NavbarContent>
-
-      <NavbarContent className="hidden" justify="end">
-        <NavbarItem>
-          <ThemeSwitcher />
-        </NavbarItem>
-        <ActionLinks />
-      </NavbarContent>
+        </NavbarMenuItem>
+      </NavbarMenu>
     </Navbar>
   );
 };

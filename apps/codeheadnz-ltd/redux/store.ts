@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import appConfigSlice from '@common/redux/appConfigSlice';
+import { appConfigSlice } from '@common/redux/appConfigSlice';
 
 export const store = configureStore({
   reducer: {

@@ -1,12 +1,6 @@
 'use client';
 
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-} from '@nextui-org/react';
+import { Button, Card, CardBody, CardFooter, CardHeader } from '@heroui/react';
 import React from 'react';
 
 const ErrorBoundary = ({

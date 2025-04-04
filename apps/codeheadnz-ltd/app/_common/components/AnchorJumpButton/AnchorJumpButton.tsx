@@ -1,5 +1,5 @@
 'use client';
-import { Button, ButtonProps } from '@nextui-org/react';
+import { Button, ButtonProps } from '@heroui/react';
 import { FaAngleDown } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 

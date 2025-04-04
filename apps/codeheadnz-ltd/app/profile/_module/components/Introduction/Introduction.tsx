@@ -1,6 +1,6 @@
 import { AnchorJumpButton } from '@common/components/AnchorJumpButton';
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
-import { Avatar } from '@nextui-org/react';
+import { Avatar } from "@heroui/react";
 
 export const Introduction = () => {
   return (

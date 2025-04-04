@@ -1,11 +1,10 @@
 'use client';
 
-import {} from 'react';
 import { store } from '@redux/store';
 import { AppConfigState } from '@common/redux/appConfigSlice';
 import {
   AppConfigProvider,
-  AppNextUiProvider,
+  AppHeroUiProvider,
   AppNextUiThemeProvider,
 } from '../Providers';
 import { StyledComponentsRegistry } from '../StyledComponentsRegistry';
@@ -18,22 +17,28 @@ export interface AppRootProps extends PropsWithChildren {
   env: AppConfigState['environmentVariables'];
 }
 
-export default function AppRoot({ env, children }: AppRootProps) {
+export const AppRoot = ({ env, children }: AppRootProps) => {
   return (
     <StyledComponentsRegistry>
       <ReduxProvider store={store}>
         <AppConfigProvider env={env}>
-          <AppNextUiProvider>
+          <AppHeroUiProvider>
             <AppNextUiThemeProvider>
-              <div className="relative flex flex-col h-screen w-screen">
-                <Header />
-                <main className="container-none mx-auto">{children}</main>
-                <Footer />
+              <div className="relative flex flex-col h-screen w-screen bg-background text-foreground">
+                <header className="h-20">
+                  <Header />
+                </header>
+                <main className="container-none mx-auto h-auto flex-grow scroll-auto">
+                  {children}
+                </main>
+                <footer className="p-4 text-white bottom-2">
+                  <Footer />
+                </footer>
               </div>
             </AppNextUiThemeProvider>
-          </AppNextUiProvider>
+          </AppHeroUiProvider>
         </AppConfigProvider>
       </ReduxProvider>
     </StyledComponentsRegistry>
   );
-}
+};

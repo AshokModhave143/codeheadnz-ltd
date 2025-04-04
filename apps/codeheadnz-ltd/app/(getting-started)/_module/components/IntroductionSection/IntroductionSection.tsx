@@ -1,5 +1,5 @@
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
-import { Button } from '@nextui-org/react';
+import { Button } from "@heroui/react";
 
 export const IntroductionSection = () => {
   return (

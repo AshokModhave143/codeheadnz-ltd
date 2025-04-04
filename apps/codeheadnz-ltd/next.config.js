@@ -3,12 +3,16 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 
+const BASE_PATH = process.env.BASE_PATH || '';
+
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+  basePath: BASE_PATH,
   env: {
     NX_CLOUD_AUTH_TOKEN: `${process.env.NX_CLOUD_AUTH_TOKEN}`,
+    BASE_PATH,
   },
   nx: {
     // Set this to true if you would like to to use SVGR

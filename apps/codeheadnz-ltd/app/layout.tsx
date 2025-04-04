@@ -1,5 +1,5 @@
 import './globals.css';
-import AppRoot from './_common/components/AppRoot';
+import { AppRoot } from './_common/components/AppRoot';
 import { unstable_noStore as noStore } from 'next/cache';
 import { AppConfigState } from './_common/redux/appConfigSlice';
 
@@ -31,6 +31,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <AppRoot env={env}>{children}</AppRoot>

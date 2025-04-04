@@ -2,7 +2,7 @@
 
 import { PageSection } from '@common/components/PageSection';
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
-import { Button, Input } from '@nextui-org/react';
+import { Button, Input } from "@heroui/react";
 import React from 'react';
 
 export const Contact = () => {

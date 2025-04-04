@@ -8,7 +8,7 @@ export interface AppConfigState {
 
 const initialState = { environmentVariables: {} } as unknown as AppConfigState;
 
-const appConfigSlice = createSlice({
+export const appConfigSlice = createSlice({
   name: 'appConfig',
   initialState,
   reducers: {
@@ -22,4 +22,3 @@ const appConfigSlice = createSlice({
 });
 
 export const { setEnvironmentVariables } = appConfigSlice.actions;
-export default appConfigSlice;

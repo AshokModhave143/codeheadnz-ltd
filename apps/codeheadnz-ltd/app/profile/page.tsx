@@ -4,7 +4,7 @@ import { About } from './_module/components/About';
 import { Projects } from './_module/components/Projects';
 import { Contact } from './_module/components/Contact';
 
-export default function ProfilePafe() {
+export default function ProfilePage() {
   return (
     <div className="h-screen w-screen bg-background overflow-auto">
       <Introduction />

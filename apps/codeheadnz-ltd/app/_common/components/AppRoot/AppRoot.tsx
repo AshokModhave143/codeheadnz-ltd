@@ -6,6 +6,7 @@ import {
   AppConfigProvider,
   AppHeroUiProvider,
   AppNextUiThemeProvider,
+  NextAuthSessionProvider,
 } from '../Providers';
 import { StyledComponentsRegistry } from '../StyledComponentsRegistry';
 import { PropsWithChildren } from 'react';
@@ -22,21 +23,23 @@ export const AppRoot = ({ env, children }: AppRootProps) => {
     <StyledComponentsRegistry>
       <ReduxProvider store={store}>
         <AppConfigProvider env={env}>
-          <AppHeroUiProvider>
-            <AppNextUiThemeProvider>
-              <div className="relative flex flex-col h-screen w-screen bg-background text-foreground">
-                <header className="h-20">
-                  <Header />
-                </header>
-                <main className="container-none mx-auto h-auto flex-grow scroll-auto">
-                  {children}
-                </main>
-                <footer className="p-4 text-white bottom-2">
-                  <Footer />
-                </footer>
-              </div>
-            </AppNextUiThemeProvider>
-          </AppHeroUiProvider>
+          <NextAuthSessionProvider>
+            <AppHeroUiProvider>
+              <AppNextUiThemeProvider>
+                <div className="relative flex flex-col h-screen w-screen bg-background text-foreground">
+                  <header className="h-20">
+                    <Header />
+                  </header>
+                  <main className="container-none mx-auto h-auto flex-grow scroll-auto">
+                    {children}
+                  </main>
+                  <footer className="p-4 text-white bottom-2">
+                    <Footer />
+                  </footer>
+                </div>
+              </AppNextUiThemeProvider>
+            </AppHeroUiProvider>
+          </NextAuthSessionProvider>
         </AppConfigProvider>
       </ReduxProvider>
     </StyledComponentsRegistry>

@@ -2,6 +2,7 @@ import './globals.css';
 import { AppRoot } from './_common/components/AppRoot';
 import { unstable_noStore as noStore } from 'next/cache';
 import { AppConfigState } from './_common/redux/appConfigSlice';
+import { Spinner } from '@heroui/react';
 
 export const metadata = {
   title: 'Codehead NZ LTD',
@@ -23,6 +24,12 @@ export default function RootLayout({
   const env = {
     ENVIORNMENT: process.env.ENVIORNMENT,
   } as AppConfigState['environmentVariables'];
+
+  if (!env.ENVIORNMENT) {
+    return (
+      <Spinner className="flex justify-center items-center h-screen w-screen" />
+    );
+  }
 
   return (
     <html lang="en" className="dark" suppressHydrationWarning>

@@ -34,16 +34,14 @@ export const UserProfile = () => {
           description={session?.user?.email}
           className="py-2"
         />
-        <Button
-          as={Link}
-          variant="solid"
+        <Link
           color="primary"
           href={
             navConfig.navLinks.find((link) => link.label === 'Profile')?.href
           }
         >
           Go to Profile
-        </Button>
+        </Link>
       </CardHeader>
       <Divider />
       <CardBody className="px-3 py-2 text-small text-default-400 gap-3">

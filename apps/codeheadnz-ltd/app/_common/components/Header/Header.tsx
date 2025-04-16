@@ -118,20 +118,14 @@ export const Header = (props: HeaderProps) => {
     const authenticatedActions = (
       <>
         <NavbarItem className="inline-flex gap-2">
-          <Button
+          <User
             as={Link}
-            variant="bordered"
-            className="h-14 m-2"
+            avatarProps={{ src: session?.user?.image || '' }}
+            name={session?.user?.name}
+            description={session?.user?.email}
             href={navConfig.userProfile.href}
-            color="default"
-          >
-            <User
-              avatarProps={{ src: session?.user?.image || '' }}
-              name={session?.user?.name}
-              description={session?.user?.email}
-              className="py-2"
-            />
-          </Button>
+            className="border-1 border-s-orange-100 rounded-md p-1"
+          />
         </NavbarItem>
         <NavbarItem>
           <Button color="danger" variant="solid" onPress={() => signOut()}>

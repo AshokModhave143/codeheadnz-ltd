@@ -11,7 +11,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Avatar,
+  User,
 } from '@heroui/react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import { useState } from 'react';
@@ -23,61 +23,65 @@ import { signOut, useSession } from 'next-auth/react';
 /* eslint-disable-next-line */
 export interface HeaderProps {}
 
+export const navConfig = {
+  navLinks: [
+    {
+      label: 'Home',
+      href: '/',
+    },
+    {
+      label: 'About',
+      href: `/profile/#${PROFILE_PAGE_SECTION_IDS.about}`,
+    },
+    {
+      label: 'Profile',
+      href: '/profile',
+    },
+    {
+      label: 'Projects',
+      href: `/profile/#${PROFILE_PAGE_SECTION_IDS.projects}`,
+    },
+    {
+      label: 'Contact',
+      href: `/profile/#${PROFILE_PAGE_SECTION_IDS.contact}`,
+    },
+  ],
+  socialLinks: [
+    {
+      label: 'Google',
+      href: 'https://www.google.com/search?q=codehead+nz+limited',
+      icon: 'google',
+    },
+    {
+      label: 'GitHub',
+      href: 'https://github.com/ashokmodhave143',
+      icon: 'github',
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/codeheadnz/',
+      icon: 'linkedin',
+    },
+  ],
+  signIn: {
+    label: 'Login',
+    href: '/authenticate',
+  },
+  signUp: {
+    label: 'Sign Up',
+  },
+  signOut: {
+    label: 'Sign Out',
+  },
+  userProfile: {
+    label: 'User Profile',
+    href: '/authenticate/user',
+  },
+};
+
 export const Header = (props: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session, status } = useSession();
-
-  const navConfig = {
-    navLinks: [
-      {
-        label: 'Home',
-        href: '/',
-      },
-      {
-        label: 'About',
-        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.about}`,
-      },
-      {
-        label: 'Profile',
-        href: '/profile',
-      },
-      {
-        label: 'Projects',
-        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.projects}`,
-      },
-      {
-        label: 'Contact',
-        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.contact}`,
-      },
-    ],
-    socialLinks: [
-      {
-        label: 'Google',
-        href: 'https://www.google.com/search?q=codehead+nz+limited',
-        icon: 'google',
-      },
-      {
-        label: 'GitHub',
-        href: 'https://github.com/ashokmodhave143',
-        icon: 'github',
-      },
-      {
-        label: 'LinkedIn',
-        href: 'https://www.linkedin.com/company/codeheadnz/',
-        icon: 'linkedin',
-      },
-    ],
-    signIn: {
-      label: 'Login',
-      href: '/authenticate',
-    },
-    signUp: {
-      label: 'Sign Up',
-    },
-    signOut: {
-      label: 'Sign Out',
-    },
-  };
 
   const [activeTab, setActiveTab] = useState(navConfig.navLinks[0].label);
 
@@ -114,16 +118,20 @@ export const Header = (props: HeaderProps) => {
     const authenticatedActions = (
       <>
         <NavbarItem className="inline-flex gap-2">
-          <p className="ml-2 font-semibold bottom-0">
-            {session?.user?.name || 'User'}
-          </p>
-          <Avatar
-            alt={session?.user?.name || ''}
-            src={session?.user?.image || ''}
-            size="sm"
-            isBordered
-            color="success"
-          />
+          <Button
+            as={Link}
+            variant="bordered"
+            className="h-14 m-2"
+            href={navConfig.userProfile.href}
+            color="default"
+          >
+            <User
+              avatarProps={{ src: session?.user?.image || '' }}
+              name={session?.user?.name}
+              description={session?.user?.email}
+              className="py-2"
+            />
+          </Button>
         </NavbarItem>
         <NavbarItem>
           <Button color="danger" variant="solid" onPress={() => signOut()}>

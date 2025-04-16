@@ -1,6 +1,5 @@
-import NextAuth from 'next-auth';
 import { authOptions } from '@app/api/util/authOptions';
-
+import NextAuth from 'next-auth';
 declare module 'next-auth' {
   interface Session {
     accessToken?: unknown;

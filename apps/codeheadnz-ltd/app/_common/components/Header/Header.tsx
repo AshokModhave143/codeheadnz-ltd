@@ -75,7 +75,7 @@ export const navConfig = {
   },
   userProfile: {
     label: 'User Profile',
-    href: '/authenticate/user',
+    // href: '/authenticate/user',
   },
 };
 
@@ -123,7 +123,7 @@ export const Header = (props: HeaderProps) => {
             avatarProps={{ src: session?.user?.image || '' }}
             name={session?.user?.name}
             description={session?.user?.email}
-            href={navConfig.userProfile.href}
+            // href={navConfig.userProfile.href}
             className="border-1 border-s-orange-100 rounded-md p-1"
           />
         </NavbarItem>

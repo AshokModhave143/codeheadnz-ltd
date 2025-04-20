@@ -126,6 +126,7 @@ export const Header = (props: HeaderProps) => {
               alt: session?.user?.name || '',
               size: 'sm',
             }}
+            className="border-1 border-s-orange-100 rounded-md p-1"
           />
         </NavbarItem>
         <NavbarItem>

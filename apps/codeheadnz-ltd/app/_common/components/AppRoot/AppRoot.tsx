@@ -32,11 +32,7 @@ export const AppRoot = ({ env, children }: AppRootProps) => {
                     <Header />
                   </header>
                   <main className="container-none mx-auto h-auto flex-grow scroll-auto">
-                    {!env.ENVIORNMENT ? (
-                      <Spinner className="flex justify-center items-center h-screen w-screen" />
-                    ) : (
-                      children
-                    )}
+                    {children}
                   </main>
                   <footer className="p-4 text-white bottom-2">
                     <Footer />

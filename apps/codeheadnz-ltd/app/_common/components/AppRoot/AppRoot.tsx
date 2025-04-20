@@ -13,6 +13,7 @@ import { PropsWithChildren } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
+import { Spinner } from '@heroui/react';
 
 export interface AppRootProps extends PropsWithChildren {
   env: AppConfigState['environmentVariables'];
@@ -31,7 +32,11 @@ export const AppRoot = ({ env, children }: AppRootProps) => {
                     <Header />
                   </header>
                   <main className="container-none mx-auto h-auto flex-grow scroll-auto">
-                    {children}
+                    {!env.ENVIORNMENT ? (
+                      <Spinner className="flex justify-center items-center h-screen w-screen" />
+                    ) : (
+                      children
+                    )}
                   </main>
                   <footer className="p-4 text-white bottom-2">
                     <Footer />

@@ -25,8 +25,11 @@ const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session, token }) {
       // Add property to session, like an access_token from a provider.
-      if (token) {
-        session.accessToken = token.accessToken;
+      if (session) {
+        session = Object.assign({}, session, {
+          accessToken: token?.accessToken,
+          accessTokenExpires: token?.accessTokenExpires,
+        });
       }
       return session;
     },

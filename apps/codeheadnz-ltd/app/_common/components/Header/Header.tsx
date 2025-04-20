@@ -15,7 +15,7 @@ import {
 } from '@heroui/react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import { useState } from 'react';
-import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
+import { navConfig } from '@common/config';
 import { CompanyLogo } from '../CompanyLogo';
 import { FaBars } from 'react-icons/fa';
 import { signOut, useSession, signIn } from 'next-auth/react';
@@ -26,58 +26,6 @@ export interface HeaderProps {}
 export const Header = (props: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session, status } = useSession();
-
-  const navConfig = {
-    navLinks: [
-      {
-        label: 'Home',
-        href: '/',
-      },
-      {
-        label: 'About',
-        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.about}`,
-      },
-      {
-        label: 'Profile',
-        href: '/profile',
-      },
-      {
-        label: 'Projects',
-        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.projects}`,
-      },
-      {
-        label: 'Contact',
-        href: `/profile/#${PROFILE_PAGE_SECTION_IDS.contact}`,
-      },
-    ],
-    socialLinks: [
-      {
-        label: 'Google',
-        href: 'https://www.google.com/search?q=codehead+nz+limited',
-        icon: 'google',
-      },
-      {
-        label: 'GitHub',
-        href: 'https://github.com/ashokmodhave143',
-        icon: 'github',
-      },
-      {
-        label: 'LinkedIn',
-        href: 'https://www.linkedin.com/company/codeheadnz/',
-        icon: 'linkedin',
-      },
-    ],
-    signIn: {
-      label: 'Login',
-      href: '/authenticate',
-    },
-    signUp: {
-      label: 'Sign Up',
-    },
-    signOut: {
-      label: 'Sign Out',
-    },
-  };
 
   const [activeTab, setActiveTab] = useState(navConfig.navLinks[0].label);
 
@@ -119,14 +67,16 @@ export const Header = (props: HeaderProps) => {
       <>
         <NavbarItem className="inline-flex gap-2">
           <User
+            as={Link}
             name={session?.user?.name || ''}
             description={session?.user?.email || ''}
             avatarProps={{
               src: session?.user?.image || '',
-              alt: session?.user?.name || '',
+              alt: navConfig.accountDetails.label,
               size: 'sm',
             }}
-            className="border-1 border-s-orange-100 rounded-md p-1"
+            className="font-bold border-1 border-content1-foreground rounded-md px-2 py-1 shadow-sm bg-black-200"
+            href={navConfig.accountDetails.href}
           />
         </NavbarItem>
         <NavbarItem>

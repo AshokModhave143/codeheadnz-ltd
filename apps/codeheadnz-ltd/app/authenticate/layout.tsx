@@ -5,9 +5,9 @@ export default function AuthenticateLayout({
 }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-full py-2">
-      <main className="flex flex-col items-center justify-center w-full">
+      <div className="flex flex-col items-center justify-center w-full">
         {children}
-      </main>
+      </div>
     </div>
   );
 }

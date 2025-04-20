@@ -13,6 +13,7 @@ import {
   User,
 } from '@heroui/react';
 import { useSession } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 
 export const UserProfile = () => {
   const { data: session, status } = useSession();
@@ -23,6 +24,10 @@ export const UserProfile = () => {
 
   if (status === 'unauthenticated') {
     return <UnAuthProfile />;
+  }
+
+  if (!session) {
+    redirect('/');
   }
 
   return (

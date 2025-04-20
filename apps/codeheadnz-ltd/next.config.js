@@ -2,7 +2,6 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
-const path = require('path');
 
 const BASE_PATH = process.env.BASE_PATH || '';
 
@@ -29,14 +28,6 @@ const nextConfig = {
   },
   images: {
     domains: ['images.pexels.com'],
-  },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      react: path.resolve(__dirname, 'node_modules/react'),
-      'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
-    };
-    return config;
   },
 };
 

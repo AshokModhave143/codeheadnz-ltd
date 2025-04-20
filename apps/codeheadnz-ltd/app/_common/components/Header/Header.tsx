@@ -11,18 +11,21 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
+  User,
 } from '@heroui/react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import { useState } from 'react';
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
 import { CompanyLogo } from '../CompanyLogo';
 import { FaBars } from 'react-icons/fa';
+import { signOut, useSession, signIn } from 'next-auth/react';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
 
 export const Header = (props: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { data: session, status } = useSession();
 
   const navConfig = {
     navLinks: [
@@ -49,9 +52,9 @@ export const Header = (props: HeaderProps) => {
     ],
     socialLinks: [
       {
-        label: 'Twitter',
-        href: 'https://twitter.com/codeheadnz',
-        icon: 'twitter',
+        label: 'Google',
+        href: 'https://www.google.com/search?q=codehead+nz+limited',
+        icon: 'google',
       },
       {
         label: 'GitHub',
@@ -66,6 +69,7 @@ export const Header = (props: HeaderProps) => {
     ],
     signIn: {
       label: 'Login',
+      href: '/authenticate',
     },
     signUp: {
       label: 'Sign Up',
@@ -92,10 +96,16 @@ export const Header = (props: HeaderProps) => {
   };
 
   const ActionLinks = () => {
-    return (
+    const unAuthenticatedActions = (
       <>
         <NavbarItem>
-          <Link href="#">{navConfig.signIn.label}</Link>
+          <Button
+            color="primary"
+            variant="flat"
+            onPress={() => signIn('google')}
+          >
+            {navConfig.signIn.label}
+          </Button>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
@@ -104,6 +114,30 @@ export const Header = (props: HeaderProps) => {
         </NavbarItem>
       </>
     );
+
+    const authenticatedActions = (
+      <>
+        <NavbarItem className="inline-flex gap-2">
+          <User
+            name={session?.user?.name || ''}
+            description={session?.user?.email || ''}
+            avatarProps={{
+              src: session?.user?.image || '',
+              alt: session?.user?.name || '',
+              size: 'sm',
+            }}
+          />
+        </NavbarItem>
+        <NavbarItem>
+          <Button color="danger" variant="solid" onPress={() => signOut()}>
+            {navConfig.signOut.label}
+          </Button>
+        </NavbarItem>
+      </>
+    );
+    return status === 'authenticated'
+      ? authenticatedActions
+      : unAuthenticatedActions;
   };
 
   return (

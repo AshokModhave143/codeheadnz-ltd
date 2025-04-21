@@ -30,17 +30,21 @@ export const Header = (props: HeaderProps) => {
   const [activeTab, setActiveTab] = useState(navConfig.navLinks[0].label);
 
   const NavMenuLinks = () => {
-    return navConfig.navLinks.map((link) => (
-      <NavbarItem
-        key={link.label}
-        isActive={activeTab === link.label}
-        onClick={() => setActiveTab(link.label)}
-      >
-        <Link color="foreground" href={link.href}>
-          {link.label}
-        </Link>
-      </NavbarItem>
-    ));
+    return (
+      <div className="sm:flex gap-2">
+        {navConfig.navLinks.map((link) => (
+          <NavbarItem
+            key={link.label}
+            isActive={activeTab === link.label}
+            onClick={() => setActiveTab(link.label)}
+          >
+            <Link color="foreground" href={link.href}>
+              {link.label}
+            </Link>
+          </NavbarItem>
+        ))}
+      </div>
+    );
   };
 
   const ActionLinks = () => {

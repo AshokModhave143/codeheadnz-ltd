@@ -28,9 +28,7 @@ export const AppRoot = ({ env, children }: AppRootProps) => {
             <AppHeroUiProvider>
               <AppNextUiThemeProvider>
                 <div className="relative flex flex-col h-screen w-screen bg-background text-foreground">
-                  <header className="h-20">
-                    <Header />
-                  </header>
+                  <Header />
                   <main className="container-none mx-auto h-auto flex-grow scroll-auto">
                     {children}
                   </main>

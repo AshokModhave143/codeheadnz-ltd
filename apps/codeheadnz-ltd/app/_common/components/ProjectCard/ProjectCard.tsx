@@ -7,7 +7,7 @@ import {
   Image,
   Link,
   Chip,
-} from "@heroui/react";
+} from '@heroui/react';
 
 export interface ProjectCardProps {
   title: string;
@@ -29,11 +29,16 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Card className="max-w-[400px] rounded-sm">
-      <CardHeader className="flex gap-3">
-        <Image width={400} alt={title} src={image} />
-      </CardHeader>
+      {image ? (
+        <CardHeader className="flex gap-3">
+          <Image width={400} alt={title} src={image} />
+        </CardHeader>
+      ) : null}
       <CardBody className="flex flex-col gap-2">
         <p className="text-2xl">{title}</p>
+        {associatedWith ? (
+          <p className="text-sm text-foreground/70">{associatedWith}</p>
+        ) : null}
         <p>{description}</p>
         <div>
           <p className="text-sm font-bold underline">Responsibilities:</p>

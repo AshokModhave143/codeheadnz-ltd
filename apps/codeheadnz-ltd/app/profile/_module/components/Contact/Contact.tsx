@@ -2,7 +2,7 @@
 
 import { PageSection } from '@common/components/PageSection';
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
-import { Button, Input } from "@heroui/react";
+import { Button, Card, CardBody, Input, Link } from '@heroui/react';
 import React from 'react';
 
 export const Contact = () => {
@@ -50,7 +50,46 @@ export const Contact = () => {
       <div className="flex flex-col justify-center items-center ">
         <p className="text-4xl font-bold my-8 sm:my-10 underline">Contact</p>
       </div>
-      <div className="px-8 sm:px-16 lg:px-32 2xl:px-64 py-8">
+      <div className="px-8 sm:px-16 lg:px-32 2xl:px-64 py-8 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+        <Card className="rounded-sm">
+          <CardBody className="gap-4">
+            <p className="text-xl font-semibold">Let&apos;s build together</p>
+            <p className="text-sm text-foreground/70">
+              Open to contract roles in New Zealand or remote. Reach out with
+              your product idea, team needs, or collaboration request.
+            </p>
+            <div className="text-sm space-y-2">
+              <p>
+                <span className="font-semibold">Location:</span> Henderson,
+                Auckland, NZ
+              </p>
+              <p>
+                <span className="font-semibold">Phone:</span> +64 225 718 844
+              </p>
+              <p>
+                <span className="font-semibold">Email:</span>{' '}
+                <Link isExternal href="mailto:ashok.modhave143@gmail.com">
+                  ashok.modhave143@gmail.com
+                </Link>
+              </p>
+              <p>
+                <span className="font-semibold">LinkedIn:</span>{' '}
+                <Link
+                  isExternal
+                  href="https://www.linkedin.com/in/ashok-modhave"
+                >
+                  linkedin.com/in/ashok-modhave
+                </Link>
+              </p>
+              <p>
+                <span className="font-semibold">GitHub:</span>{' '}
+                <Link isExternal href="https://github.com/AshokModhave143">
+                  github.com/AshokModhave143
+                </Link>
+              </p>
+            </div>
+          </CardBody>
+        </Card>
         <form
           noValidate
           onSubmit={handleOnSubmit}
@@ -65,6 +104,7 @@ export const Contact = () => {
               size="md"
               fullWidth={false}
               isRequired={true}
+              name={field.id}
               {...field}
             />
           ))}

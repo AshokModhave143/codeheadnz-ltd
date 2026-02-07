@@ -1,6 +1,5 @@
-import { AnchorJumpButton } from '@common/components/AnchorJumpButton';
 import { PROFILE_PAGE_SECTION_IDS } from '@common/config';
-import { Avatar } from "@heroui/react";
+import { Avatar, Button, Chip } from '@heroui/react';
 
 export const Introduction = () => {
   return (
@@ -9,17 +8,17 @@ export const Introduction = () => {
       id={PROFILE_PAGE_SECTION_IDS.introduction}
     >
       <div className="w-full h-screen bg-[url('/static/images/profile-intro-bg.jpg')] bg-cover bg-center">
-        <div className="h-full flex flex-col justify-evenly items-center backdrop-brightness-50 text-white px-1">
+        <div className="h-full flex flex-col justify-evenly items-center backdrop-brightness-50 text-white px-4">
           <div className="text-4xl font-bold text-center sm:text-6xl sm:text-left">
             <p>
-              I want to{' '}
-              <span className="bg-secondary">&nbsp;make things&nbsp;</span>
+              I design and build{' '}
+              <span className="bg-secondary">&nbsp;products&nbsp;</span>
             </p>
             <p>
-              that <span className="underline">make a difference</span>.
+              that <span className="underline">ship real impact</span>.
             </p>
           </div>
-          <div className="flex flex-wrap-reverse sm:flex-nowrap w-full md:w-1/2 justify-right">
+          <div className="flex flex-wrap-reverse sm:flex-nowrap w-full md:w-2/3 justify-end">
             <div className="container-md mx-auto max-w-5xl w-full h-full my-4">
               <div className="flex flex-wrap-reverse sm:flex-nowrap">
                 <div className="flex flex-col grow justify-start items-center p-8 sm:py-16 text-wrap text-center font-bold sm:text-4xl">
@@ -30,12 +29,53 @@ export const Introduction = () => {
                     </span>
                   </p>
                   <p className="text-2xl font-light mt-4">
-                    I am a Full Stack Developer with 10+ years of experience in
-                    front-end and back-end innovative and reliable web and
-                    mobile applications.
+                    Senior Full-Stack Engineer in Auckland with 13+ years
+                    building banking, fintech, and travel platforms with React,
+                    Next.js, TypeScript, Java, and cloud-native services.
                   </p>
+                  <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm">
+                    {[
+                      'React',
+                      'Next.js',
+                      'TypeScript',
+                      'Node.js',
+                      'Java',
+                      'AWS',
+                      'GenAI',
+                    ].map((label) => (
+                      <Chip
+                        key={label}
+                        size="sm"
+                        variant="flat"
+                        color="primary"
+                        className="text-foreground"
+                      >
+                        {label}
+                      </Chip>
+                    ))}
+                  </div>
+                  <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <Button
+                      as="a"
+                      href={`#${PROFILE_PAGE_SECTION_IDS.projects}`}
+                      color="primary"
+                      variant="solid"
+                      radius="sm"
+                    >
+                      View Projects
+                    </Button>
+                    <Button
+                      as="a"
+                      href={`#${PROFILE_PAGE_SECTION_IDS.contact}`}
+                      color="secondary"
+                      variant="bordered"
+                      radius="sm"
+                    >
+                      Contact Me
+                    </Button>
+                  </div>
                 </div>
-                <div className="flex grow  justify-center items-center">
+                <div className="flex grow justify-center items-center">
                   <Avatar
                     src="/static/images/profile.jpg"
                     alt="Ashok Modhave profile image"
@@ -45,8 +85,6 @@ export const Introduction = () => {
               </div>
             </div>
           </div>
-
-          <AnchorJumpButton href={`#${PROFILE_PAGE_SECTION_IDS.about}`} />
         </div>
       </div>
     </div>

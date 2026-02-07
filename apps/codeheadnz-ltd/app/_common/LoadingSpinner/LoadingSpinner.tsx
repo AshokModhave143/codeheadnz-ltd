@@ -1,6 +1,6 @@
 import { Spinner, SpinnerProps } from '@heroui/react';
 
-export interface LoadingSpinnerProps extends SpinnerProps {}
+export type LoadingSpinnerProps = SpinnerProps;
 /**
  * LoadingSpinner component
  * @param {string} label - The label for the spinner.

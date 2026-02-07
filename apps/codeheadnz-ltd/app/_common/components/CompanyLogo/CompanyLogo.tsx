@@ -2,9 +2,7 @@ import { appName } from '@common/config';
 import { Link } from '@heroui/link';
 import { useRouter } from 'next/navigation';
 
-export interface CompanyLogoProps {}
-
-export const CompanyLogo = (_props: CompanyLogoProps) => {
+export const CompanyLogo = () => {
   const router = useRouter();
   const config = {
     companyName: appName,

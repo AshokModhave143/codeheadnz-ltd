@@ -13,7 +13,6 @@ import { PropsWithChildren } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import { Spinner } from '@heroui/react';
 
 export interface AppRootProps extends PropsWithChildren {
   env: AppConfigState['environmentVariables'];

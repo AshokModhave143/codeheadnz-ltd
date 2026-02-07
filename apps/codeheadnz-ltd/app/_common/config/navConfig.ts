@@ -11,12 +11,20 @@ export const navConfig = {
       href: `/profile/#${PROFILE_PAGE_SECTION_IDS.about}`,
     },
     {
-      label: 'Profile',
-      href: '/profile',
+      label: 'Experience',
+      href: `/profile/#${PROFILE_PAGE_SECTION_IDS.experience}`,
+    },
+    {
+      label: 'Skills',
+      href: `/profile/#${PROFILE_PAGE_SECTION_IDS.techStack}`,
     },
     {
       label: 'Projects',
       href: `/profile/#${PROFILE_PAGE_SECTION_IDS.projects}`,
+    },
+    {
+      label: 'Credentials',
+      href: `/profile/#${PROFILE_PAGE_SECTION_IDS.education}`,
     },
     {
       label: 'Contact',

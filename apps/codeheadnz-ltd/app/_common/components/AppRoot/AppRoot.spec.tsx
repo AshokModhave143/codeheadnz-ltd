@@ -1,7 +1,10 @@
 import { render } from '@testing-library/react';
 
-import AppRoot from './AppRoot';
+import { AppRoot } from './AppRoot';
 import { AppConfigState } from '@common/redux/appConfigSlice';
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const emptyFn = () => {};
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -9,11 +12,11 @@ Object.defineProperty(window, 'matchMedia', {
     matches: false,
     media: query,
     onchange: null,
-    addListener: () => {},
-    removeListener: () => {},
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    dispatchEvent: () => {},
+    addListener: emptyFn,
+    removeListener: emptyFn,
+    addEventListener: emptyFn,
+    removeEventListener: emptyFn,
+    dispatchEvent: emptyFn,
   }),
 });
 

@@ -49,3 +49,12 @@ Thumbs.db
 
 
 .nx/workspace-data
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Agents
+AGENTS.md

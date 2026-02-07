@@ -27,12 +27,10 @@ export const AppRoot = ({ env, children }: AppRootProps) => {
           <NextAuthSessionProvider>
             <AppHeroUiProvider>
               <AppNextUiThemeProvider>
-                <div className="relative flex flex-col h-screen w-screen bg-background text-foreground">
+                <div className="relative flex min-h-dvh w-full flex-col bg-background text-foreground">
                   <Header />
-                  <main className="container-none mx-auto h-auto flex-grow scroll-auto">
-                    {children}
-                  </main>
-                  <footer className="p-4 text-white bottom-2">
+                  <main className="flex-1 w-full">{children}</main>
+                  <footer className="mt-auto w-full">
                     <Footer />
                   </footer>
                 </div>

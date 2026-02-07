@@ -31,7 +31,7 @@ export const Header = (props: HeaderProps) => {
 
   const NavMenuLinks = () => {
     return (
-      <div className="sm:flex gap-2">
+      <div className="hidden sm:flex gap-2">
         {navConfig.navLinks.map((link) => (
           <NavbarItem
             key={link.label}

@@ -35,7 +35,7 @@ export const IntroductionSection = () => {
             variant="shadow"
             size="lg"
             as="a"
-            href={`/profile/#${PROFILE_PAGE_SECTION_IDS.about}`}
+            href={`/profile/#${PROFILE_PAGE_SECTION_IDS.introduction}`}
             color="primary"
             className="mt-8"
           >
